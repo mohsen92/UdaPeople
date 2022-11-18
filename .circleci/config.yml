@@ -360,16 +360,16 @@ jobs:
               --output text)
             export API_URL=http://$BACKEND_PUBLIC_IP:3030
 
-      - run:
-          name: Backend smoke test.
-          command: |
-            URL="http://${BACKEND_PUBLIC_IP}:3030/api/status"
-            if curl -s --head ${URL} 
-            then
-              exit 0
-            else
-              exit 1
-            fi
+      # - run:
+      #     name: Backend smoke test.
+      #     command: |
+      #       URL="http://${BACKEND_PUBLIC_IP}:3030/api/status"
+      #       if curl -s --head ${URL} 
+      #       then
+      #         exit 0
+      #       else
+      #         exit 1
+      #       fi
       - run:
           name: Frontend smoke test.
           command: |
