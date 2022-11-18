@@ -348,9 +348,10 @@ jobs:
 
   smoke-test:
     docker:
-      - image: alpine:latest
+      - image: cimg/python:3.10
     steps:
       - checkout
+      - install_awscli
       - run:
           name: Install dependencies
           command: |
