@@ -363,7 +363,8 @@ jobs:
       - run:
           name: Backend smoke test.
           command: |
-            if curl -s --head http://${BACKEND_PUBLIC_IP}:3030/api/status
+            URL="http://${BACKEND_PUBLIC_IP}:3030/api/status"
+            if curl -s --head ${URL} 
             then
               return 0
             else
@@ -372,7 +373,8 @@ jobs:
       - run:
           name: Frontend smoke test.
           command: |
-            if curl -s --head http://udapeople-${CIRCLE_WORKFLOW_ID:0:7}.s3-website-us-east-1.amazonaws.com/#/employees | grep "Welcome"
+            URL="http://udapeople-${CIRCLE_WORKFLOW_ID:0:7}.s3-website-us-east-1.amazonaws.com/#/employees"
+            if curl -s ${URL} | grep "Welcome"
             then
               return 0
             else
