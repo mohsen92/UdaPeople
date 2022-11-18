@@ -352,10 +352,6 @@ jobs:
       - checkout
       - install_awscli
       - run:
-          name: Install dependencies
-          command: |
-            apk add --update curl
-      - run:
           name: Get backend url
           command: |
             BACKEND_PUBLIC_IP=$(aws ec2 describe-instances \
