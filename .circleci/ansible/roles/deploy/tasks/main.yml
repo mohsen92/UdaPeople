@@ -1,0 +1,4 @@
+- name: "run backend"
+  shell: |
+    cd backend
+    sudo npm run start:prod
